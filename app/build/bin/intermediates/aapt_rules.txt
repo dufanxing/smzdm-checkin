@@ -1,0 +1,2 @@
+# Referenced at /storage/emulated/0/MT2/SMZDMAutoCheckin/app/build/bin/injected/AndroidManifest.xml:34
+-keep class com.example.smzdmcheckin.SettingsActivity { <init>(); }

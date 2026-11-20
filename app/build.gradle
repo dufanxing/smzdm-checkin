@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.smzdmcheckin'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.smzdmcheckin"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // LSPosed 维护的 Classic Xposed API (Maven Central)
+    compileOnly 'de.robv.android.xposed:api:82'
+    // 备选：若上面无法解析，手动下载 XposedBridgeApi-82.jar 放入 app/libs/ 后启用下行
+    // compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+}
