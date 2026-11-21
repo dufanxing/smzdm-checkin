@@ -17,7 +17,13 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Build debug APK (自动签名，可直接安装)
+      # 服务器预装的 Gradle 可能过新（9.x），与 AGP 8.2 不兼容，锁定 8.7
+      - name: Pin Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Build debug APK
         run: gradle assembleDebug --no-daemon
 
       - name: Upload APK artifact
